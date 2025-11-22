@@ -112,4 +112,5 @@ function initUI(){
 window.addEventListener('DOMContentLoaded', ()=> {
   initTheme();
   initUI();
+  document.getElementById("navContent").classList.add("ready");
 });
