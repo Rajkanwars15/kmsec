@@ -113,7 +113,7 @@ body.light-mode .nav-actions .cta-quote {
    ========================================= */
 
 * { box-sizing:border-box; margin:0; padding:0; }
-html,body { height:100%; }
+html,body { min-height:100%; }
 
 body {
   font-family: Georgia, "Times New Roman", serif;
@@ -462,24 +462,26 @@ footer {
     top:72px;
     left:0;
     right:0;
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
     transform:translateY(-100vh);
     transition:transform .28s ease;
     flex-direction:column;
     gap:1rem;
     padding:1rem 4%;
     background:rgba(2,6,12,0.98);
-  }
-
-  .nav-content {
-    display:none;
+    pointer-events: none;
   }
 
   .nav-content.ready {
+    max-height: 100vh;
     display:flex;
   }
 
   .nav-content.active {
     transform:translateY(0);
+    pointer-events:auto;
   }
 
   .nav-links {
