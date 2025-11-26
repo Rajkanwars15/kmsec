@@ -9,18 +9,24 @@
    ========================================= */
 
 /* Default Dark Mode */
-body.dark-mode {
-  --bg-dark:#041021;             /* deep tactical navy */
-  --panel:#0b1620;               /* section panel */
-  --light:#f6f8fa;               /* text light */
-  --muted:#9ba3b0;               /* secondary text */
+/* ==========================
+   UPDATED BRAND COLOR SYSTEM
+   Gold / Bronze Edition
+   ========================== */
 
-  /* ORANGE BRAND PALETTE */
-  --primary:#D45500;
-  --accent:#FF6A1A;
-  --accent-light:#FF8C4C;
-  --accent-dark:#A34100;
-  --accent-glow:rgba(212,85,0,0.34);
+/* Default Dark Mode */
+body.dark-mode {
+  --bg-dark:#041021;
+  --panel:#0b1620;
+  --light:#f6f8fa;
+  --muted:#9ba3b0;
+
+  /* GOLD BRAND PALETTE */
+  --primary:rgba(209,148,69,1);
+  --accent:rgba(230,170,90,1);
+  --accent-light:rgba(245,200,130,1);
+  --accent-dark:rgba(170,120,55,1);
+  --accent-glow:rgba(209,148,69,0.34);
 
   background:var(--bg-dark);
   color:var(--light);
@@ -33,12 +39,12 @@ body.light-mode {
   --light:#041021;
   --muted:#444;
 
-  /* ORANGE BRAND PALETTE — same in light */
-  --primary:#D45500;
-  --accent:#FF6A1A;
-  --accent-light:#FF8C4C;
-  --accent-dark:#A34100;
-  --accent-glow:rgba(212,85,0,0.2);
+  /* GOLD BRAND PALETTE */
+  --primary:rgba(209,148,69,1);
+  --accent:rgba(230,170,90,1);
+  --accent-light:rgba(245,200,130,1);
+  --accent-dark:rgba(170,120,55,1);
+  --accent-glow:rgba(209,148,69,0.2);
 
   background:var(--bg-dark);
   color:var(--light);
@@ -93,11 +99,11 @@ body.light-mode .nav-actions .cta-quote {
    ========================================= */
 
 :root {
-  --primary:#D45500;
-  --accent:#FF6A1A;
-  --accent-light:#FF8C4C;
-  --accent-dark:#A34100;
-  --accent-glow:rgba(212,85,0,0.34);
+  --primary:rgba(209,148,69,1);
+  --accent:rgba(230,170,90,1);
+  --accent-light:rgba(245,200,130,1);
+  --accent-dark:rgba(170,120,55,1);
+  --accent-glow:rgba(209,148,69,0.34);
 
   --muted:#6b7280;
   --bg-dark:#041021;
