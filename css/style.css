@@ -241,6 +241,7 @@ img { display:block; max-width:100%; }
 
 .hero-inner {
   max-width:var(--max-width);
+  margin:0 auto;
   display:grid;
   grid-template-columns:1fr 420px;
   gap:2.4rem;
