@@ -3,9 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KM Security — Elite Defence Personnel Protection Services</title>
-  <meta name="description" content="KM Security — Military-grade protection led by Col. Kanwar Manmeet (Retd.). Executive protection, industrial security, tactical operations and crisis management by vetted defence veterans." />
-  <meta name="theme-color" content="#041021" />
+  <title>KM Security — Kanwar Manmeet Security Agency | PSARA Licensed Security Services</title>
+  <meta name="description" content="M/S Kanwar Manmeet Security Agency (KM Security) - PSARA licensed security agency led by Colonel Kanwar Manmeet. Providing armed & unarmed security personnel, military/CAPF veterans, 24/7 deployment for corporate offices, industrial plants, airports, and more." />
+  <meta name="keywords" content="security agency, PSARA licensed, armed security, unarmed security, military veterans, CAPF veterans, corporate security, industrial security, airport security, Mohali security services, Punjab security" />
+  <meta name="author" content="KM Security - Kanwar Manmeet Security Agency" />
+  <meta name="theme-color" content="#D19445" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="KM Security — Kanwar Manmeet Security Agency | PSARA Licensed" />
+  <meta property="og:description" content="PSARA licensed security agency providing armed & unarmed security personnel, military/CAPF veterans, 24/7 deployment. Led by Colonel Kanwar Manmeet." />
+  <meta property="og:image" content="icon.png" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KM Security — Kanwar Manmeet Security Agency" />
+  <meta name="twitter:description" content="PSARA licensed security agency with military veterans. 24/7 security services." />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://kmsecurity.in" />
 
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -18,16 +34,56 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  <!-- Structured data (light) -->
+  <!-- Structured data -->
   <script type="application/ld+json">
     {
       "@context":"https://schema.org",
       "@type":"Organization",
-      "name":"KM Security",
-      "url":"https://example.com",
-      "logo":"https://example.com/icon.png",
-      "description":"Military-grade protection led by Col. Kanwar Manmeet (Retd.)."
+      "name":"M/S Kanwar Manmeet Security Agency",
+      "alternateName":"KM Security",
+      "url":"https://kmsecurity.in",
+      "logo":"https://kmsecurity.in/icon.png",
+      "description":"PSARA licensed security agency providing armed & unarmed security personnel, military/CAPF veterans, 24/7 deployment and monitoring capability.",
+      "foundingDate":"2020",
+      "founder":{
+        "@type":"Person",
+        "name":"Colonel Kanwar Manmeet",
+        "jobTitle":"Founder and CEO"
+      },
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Top Floor, SCO-44, Sector-63",
+        "addressLocality":"Mohali",
+        "addressRegion":"Punjab",
+        "addressCountry":"IN"
+      },
+      "contactPoint":{
+        "@type":"ContactPoint",
+        "telephone":"+91-98320-22222",
+        "contactType":"Customer Service",
+        "email":"ceo.kmsa@gmail.com",
+        "areaServed":"IN",
+        "availableLanguage":"en"
+      },
+      "sameAs":[
+        "https://wa.me/919832022222"
+      ],
+      "areaServed":{
+        "@type":"Country",
+        "name":"India"
+      },
+      "serviceType":"Security Services",
+      "hasCredential":{
+        "@type":"EducationalOccupationalCredential",
+        "credentialCategory":"PSARA License"
+      }
     }
   </script>
 </head>
@@ -43,18 +99,19 @@
       </a>
     </div>
 
-    <button id="mobileMenuBtn" class="mobile-menu-btn" aria-expanded="false" aria-controls="navContent" aria-label="Toggle menu">☰</button>
+    <button id="mobileMenuBtn" class="mobile-menu-btn" aria-expanded="false" aria-controls="navContent" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
 
     <div id="navContent" class="nav-content" role="menubar">
       <ul class="nav-links" role="menu">
         <li role="none"><a role="menuitem" href="#home" onclick="closeMenu()">Home</a></li>
-        <li role="none"><a role="menuitem" href="#services" onclick="closeMenu()">Services</a></li>
         <li role="none"><a role="menuitem" href="#about" onclick="closeMenu()">About</a></li>
+        <li role="none"><a role="menuitem" href="#services" onclick="closeMenu()">Services</a></li>
+        <li role="none"><a role="menuitem" href="#industries" onclick="closeMenu()">Industries</a></li>
         <li role="none"><a role="menuitem" href="#contact" onclick="closeMenu()">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button id="themeToggle" class="theme-toggle" aria-pressed="true" aria-label="Toggle theme"><span id="themeIcon">🌙</span></button>
+        <button id="themeToggle" class="theme-toggle" aria-pressed="true" aria-label="Toggle theme"><i id="themeIcon" class="fas fa-moon"></i></button>
         <a class="cta-quote" href="#contact">Request Quote</a>
       </div>
     </div>
@@ -66,14 +123,14 @@
   <header id="home" class="hero" role="banner" aria-labelledby="hero-heading">
     <div class="hero-inner">
       <div class="hero-left">
-        <div class="badge">🎖️ MILITARY GRADE SECURITY</div>
-        <h1 id="hero-heading">Elite <span class="highlight">Defence Personnel</span> Protection</h1>
-        <p class="subtitle">Precision. Discipline. Unwavering Protection.</p>
-        <p class="lead">Led by retired Army officer <strong>Col. Kanwar Manmeet</strong>, KM Security delivers military-grade security solutions with an exclusively trained team of defence veterans.</p>
+        <div class="badge"><i class="fas fa-shield-alt"></i> PSARA LICENSED SECURITY AGENCY</div>
+        <h1 id="hero-heading">M/S Kanwar Manmeet <span class="highlight">Security Agency</span></h1>
+        <p class="subtitle">Reliable. Disciplined. Professional. Your Security — Our Commitment.</p>
+        <p class="lead">A military veteran's enterprise headed by <strong>Colonel Kanwar Manmeet</strong>. Director General of Resettlement empanelled agency with valid PSARA License, delivering dependable, compliant and high-quality security solutions to public and private establishments.</p>
 
         <div class="cta-row">
-          <a class="btn btn-primary" href="#contact">Request Security Quote</a>
-          <button class="btn btn-secondary" id="scrollServices">Our Services</button>
+          <a class="btn btn-primary" href="#contact">Request Quote</a>
+          <a class="btn btn-whatsapp" href="https://wa.me/919832022222" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
         </div>
       </div>
 
@@ -86,98 +143,161 @@
   <!-- STATS -->
   <section class="stats" aria-label="Quick stats">
     <div class="stats-grid">
-      <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Defence Veterans</div></div>
-      <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">Protection</div></div>
-      <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">Industries Secured</div></div>
-      <div class="stat-card"><div class="stat-number">20+</div><div class="stat-label">Years Combined Experience</div></div>
+      <div class="stat-card"><div class="stat-number">PSARA</div><div class="stat-label">Licensed Agency</div></div>
+      <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">Deployment & Monitoring</div></div>
+      <div class="stat-card"><div class="stat-number">Military</div><div class="stat-label">Veterans Team</div></div>
+      <div class="stat-card"><div class="stat-number">DG Resettlement</div><div class="stat-label">Empanelled</div></div>
     </div>
   </section>
 
   <!-- SERVICES -->
   <section id="services" class="services" aria-labelledby="services-heading">
     <div class="section-header">
-      <h2 id="services-heading">Mission-Critical <span class="highlight">Security Solutions</span></h2>
-      <p>Military precision meets industrial security requirements</p>
+      <h2 id="services-heading">Services <span class="highlight">Offered</span></h2>
+      <p>Comprehensive suite of security services tailored to evolving client needs</p>
     </div>
 
     <div class="services-grid">
       <article class="service-card">
-        <div class="service-icon">🏭</div>
-        <h3>Industrial Security</h3>
-        <p>Comprehensive security for manufacturing facilities, warehouses and industrial complexes.</p>
-        <ul>
-          <li>24/7 Armed Guards</li>
-          <li>Access Control Systems</li>
-          <li>Perimeter Security</li>
-          <li>Asset Protection</li>
-        </ul>
+        <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Armed & Unarmed Security Personnel</h3>
+        <p>Professional security personnel trained to handle various security scenarios. Available in both armed and unarmed configurations based on client requirements and regulatory compliance.</p>
       </article>
 
       <article class="service-card">
-        <div class="service-icon">🏢</div>
-        <h3>Corporate Security</h3>
-        <p>Executive protection and corporate facility security with military-trained professionals.</p>
-        <ul>
-          <li>Executive Protection</li>
-          <li>Office Security</li>
-          <li>Event Security</li>
-          <li>Crisis Management</li>
-        </ul>
+        <div class="service-icon"><i class="fas fa-medal"></i></div>
+        <h3>Trained Military/CAPF Veterans</h3>
+        <p>Our team consists of carefully selected Military and Central Armed Police Forces (CAPF) veterans with proven track records in security operations and crisis management.</p>
       </article>
 
       <article class="service-card">
-        <div class="service-icon">🎯</div>
-        <h3>Tactical Operations</h3>
-        <p>Specialized operations requiring advanced training and strategic deployment.</p>
-        <ul>
-          <li>Risk Assessment</li>
-          <li>Security Consulting</li>
-          <li>Emergency Response</li>
-          <li>Training Programs</li>
-        </ul>
+        <div class="service-icon"><i class="fas fa-clock"></i></div>
+        <h3>24/7 Deployment and Monitoring Capability</h3>
+        <p>Round-the-clock security deployment with continuous monitoring to ensure your premises remain secure at all times, day and night.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon"><i class="fas fa-cogs"></i></div>
+        <h3>End-to-End Security Management</h3>
+        <p>Complete security solutions from risk assessment to implementation, monitoring, and continuous improvement. Our objective is to evolve into a multifaceted security group capable of supporting both conventional and future-focused security requirements.</p>
       </article>
     </div>
   </section>
 
-  <!-- ABOUT (Leadership) -->
-  <section id="about" class="about" aria-labelledby="about-heading">
+  <!-- REGULATORY COMPLIANCE -->
+  <section id="compliance" class="compliance" aria-labelledby="compliance-heading">
     <div class="section-header">
-      <h2 id="about-heading">Leadership with <span class="highlight">Military Distinction</span></h2>
+      <h2 id="compliance-heading">Regulatory <span class="highlight">Compliance</span></h2>
+      <p>Fully compliant with all statutory obligations</p>
     </div>
 
-    <!-- SIDE-BY-SIDE: LEFT = TEXT, RIGHT = km.png -->
-    <div class="about-grid">
-      <div class="about-text">
-        <h2>Led by <span class="rank">Col. Kanwar Manmeet</span></h2>
-        <p>KM Security is built on the foundation of military excellence. Under the leadership of retired Army officer Col. Kanwar Manmeet, we bring decades of tactical experience and unwavering discipline to the private security sector.</p>
-        <p>Our team consists exclusively of defence veterans who have served the nation with honor and distinction. This unique composition ensures every security operation is executed with precision, reliability, and strategic thinking.</p>
+    <div class="compliance-grid">
+      <div class="compliance-card">
+        <h3>PSARA License</h3>
+        <p>Private Security Agencies Regulation Act (PSARA) 2005 compliant</p>
+      </div>
+      <div class="compliance-card">
+        <h3>Labour Laws</h3>
+        <p>Full compliance with all applicable labour regulations</p>
+      </div>
+      <div class="compliance-card">
+        <h3>EPFO & ESIC</h3>
+        <p>Employee Provident Fund Organization and Employee State Insurance Corporation requirements met</p>
+      </div>
+      <div class="compliance-card">
+        <h3>GST Regulations</h3>
+        <p>GST compliant with all statutory obligations strictly adhered to</p>
+      </div>
+      <div class="compliance-card compliance-address">
+        <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+        <p>Top Floor, SCO-44, Sector-63<br>Mohali (Punjab)</p>
+      </div>
+    </div>
+  </section>
 
-        <div class="credentials">
-          <h4>Why Defence Veterans?</h4>
-          <ul>
-            <li>Proven leadership under pressure</li>
-            <li>Advanced tactical training and weapons proficiency</li>
-            <li>Disciplined approach to security protocols</li>
-            <li>Crisis management expertise</li>
-            <li>Loyalty and integrity as core values</li>
-            <li>Physical and mental resilience</li>
-          </ul>
+  <!-- INDUSTRIES -->
+  <section id="industries" class="industries" aria-labelledby="industries-heading">
+    <div class="section-header">
+      <h2 id="industries-heading">Industries <span class="highlight">We Serve</span></h2>
+      <p>Our security expertise covers a wide range of sectors</p>
+    </div>
+
+    <div class="industries-grid">
+      <div class="industry-card"><i class="fas fa-building"></i> Corporate Offices</div>
+      <div class="industry-card"><i class="fas fa-industry"></i> Industrial Plants</div>
+      <div class="industry-card"><i class="fas fa-plane"></i> Airports & Logistics Hubs</div>
+      <div class="industry-card"><i class="fas fa-broadcast-tower"></i> Telecommunication Facilities</div>
+      <div class="industry-card"><i class="fas fa-oil-can"></i> Oil Depots & Refineries</div>
+      <div class="industry-card"><i class="fas fa-gas-pump"></i> Fuel Stations</div>
+      <div class="industry-card"><i class="fas fa-store"></i> Commercial Establishments</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about" aria-labelledby="about-heading">
+    <div class="section-header">
+      <h2 id="about-heading">About <span class="highlight">KM Security</span></h2>
+      <p>Military veteran's enterprise delivering dependable, compliant and high-quality security solutions</p>
+    </div>
+
+    <div class="about-content">
+      <p class="about-intro">M/S Kanwar Manmeet Security Agency (KM Security) is a military veteran's enterprise headed by <strong>Colonel Kanwar Manmeet</strong>. KM Security is a Director General of Resettlement empanelled agency having a valid PASARA License and delivers dependable, compliant and high-quality security solutions to public and private establishments.</p>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <h3>Our <span class="highlight">Leadership</span></h3>
+          <h4>Colonel Kanwar Manmeet — Founder and CEO</h4>
+          <p>A distinguished military veteran who has held key Command, Staff and Instructional appointments and has vast experience in the field of security and administration.</p>
+          <p>His leadership style is rooted in discipline, integrity and accountability – values that define the culture and performance of KM Security.</p>
+
+          <h3 style="margin-top: 2rem;">Our <span class="highlight">Team</span></h3>
+          <p>A robust team of trained military veterans and administrative staff ensures seamless operations and effective security deployment.</p>
+          <p>The team has a military style chain of command to ensure effective supervision, discipline and recruitment.</p>
+
+          <div class="credentials">
+            <h4>Our People</h4>
+            <p>All guards are carefully selected Military/CAPF veterans, or experienced, verified civilians, as per client requirement. Every guard undergoes a rigorous verification process followed by a structured security training programme.</p>
+          </div>
+
+          <div class="credentials" style="margin-top: 1rem;">
+            <h4>Our Approach</h4>
+            <p>At KM Security, leadership is hands-on. Colonel Kanwar Manmeet personally oversees key operational areas to ensure:</p>
+            <ul>
+              <li>Superior Service Delivery</li>
+              <li>Rapid Response</li>
+              <li>Client Satisfaction at Every Level</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="about-image">
+          <img src="img/KM.JPEG" alt="Colonel Kanwar Manmeet" onerror="this.style.display='none'" />
         </div>
       </div>
-
-      <div class="about-image">
-        <!-- YOU: place img/km.png into /img directory -->
-        <img src="img/km.png" alt="Col. Kanwar Manmeet" />
-      </div>
-  </div>
+    </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="contact" aria-labelledby="contact-heading">
     <div class="contact-content">
       <div class="section-header">
-        <h2 id="contact-heading">Deploy <span class="highlight">Elite Security</span> Today</h2>
-        <p>Request a consultation with our security experts</p>
+        <h2 id="contact-heading">Contact <span class="highlight">Us</span></h2>
+        <p>Get in touch for reliable, disciplined, and professional security solutions</p>
+      </div>
+
+      <div class="contact-info-grid">
+        <div class="contact-info-card">
+          <h3><i class="fas fa-phone"></i> Phone</h3>
+          <p><a href="tel:+919832022222">+91 98320-22222</a></p>
+        </div>
+        <div class="contact-info-card">
+          <h3><i class="fas fa-envelope"></i> Email</h3>
+          <p><a href="mailto:ceo.kmsa@gmail.com">ceo.kmsa@gmail.com</a></p>
+        </div>
+        <div class="contact-info-card">
+          <h3><i class="fab fa-whatsapp"></i> WhatsApp</h3>
+          <p><a href="https://wa.me/919832022222" target="_blank" rel="noopener noreferrer" class="whatsapp-link">Chat with us on WhatsApp</a></p>
+        </div>
       </div>
 
       <form id="contactForm" class="contact-form" novalidate>
@@ -188,7 +308,7 @@
         <textarea id="message" name="message" placeholder="Security Requirements & Message" required></textarea>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Request Consultation</button>
+          <button type="submit" class="btn btn-primary">Send Message</button>
           <button type="reset" class="btn btn-secondary">Reset</button>
         </div>
 
@@ -199,11 +319,24 @@
 </main>
 
 <footer>
-  <p><strong>KM Security</strong> — Elite Defence Personnel Protection Services</p>
-  <p>Led by Col. Kanwar Manmeet (Retd.) | All Defence Veterans Team</p>
-  <p style="margin-top:1rem; font-size:0.9rem; opacity:0.8;">© <span id="footerYear"></span> KM Security. All rights reserved.</p>
-  <p style="font-size:0.9rem; opacity:0.8;">Developed with ❤️ by <a href="https://rajkanwars15.github.io/">Raj</a></p>
+  <p><strong>M/S Kanwar Manmeet Security Agency</strong> — KM Security</p>
+  <p>PSARA Licensed | Director General of Resettlement Empanelled</p>
+  <p>Reliable. Disciplined. Professional. Your Security — Our Commitment.</p>
+  <div class="footer-contact">
+    <p><a href="tel:+919832022222"><i class="fas fa-phone"></i> +91 98320-22222</a> | <a href="mailto:ceo.kmsa@gmail.com"><i class="fas fa-envelope"></i> ceo.kmsa@gmail.com</a></p>
+    <p><a href="https://wa.me/919832022222" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp Business</a></p>
+  </div>
+  <p style="margin-top:1rem; font-size:0.9rem; opacity:0.8;">© <span id="footerYear"></span> M/S Kanwar Manmeet Security Agency. All rights reserved.</p>
+  <p style="font-size:0.9rem; opacity:0.8;">Top Floor, SCO-44, Sector-63, Mohali (Punjab)</p>
+  <p style="font-size:0.9rem; opacity:0.8;">Developed with <i class="fas fa-heart" style="color:var(--primary);"></i> by <a href="https://rajkanwars15.github.io/">Raj</a></p>
 </footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919832022222" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+    <path d="M16 0C7.164 0 0 7.164 0 16c0 2.829.744 5.49 2.044 7.789L0 32l8.447-2.044C10.69 31.256 13.251 32 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333c-2.347 0-4.551-.618-6.453-1.697l-.451-.213-4.691 1.136 1.136-4.691-.213-.451C4.618 20.551 4 18.347 4 16 4 9.383 9.383 4 16 4s12 5.383 12 12-5.383 12-12 12zm6.576-9.088c-.3-.15-1.767-.872-2.04-.972-.273-.1-.471-.15-.67.15-.198.3-.771.972-.945 1.172-.174.2-.348.225-.646.075-.3-.15-1.265-.466-2.41-1.485-.891-.794-1.494-1.774-1.67-2.074-.174-.3-.019-.463.131-.613.135-.135.3-.348.45-.523.15-.174.2-.3.3-.5.1-.2.05-.375-.025-.523-.075-.15-.67-1.617-.919-2.207-.242-.575-.487-.498-.67-.508-.174-.008-.375-.01-.575-.01s-.525.075-.8.375c-.273.3-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.075.15.2 2.095 3.2 5.076 4.487.709.3 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.767-.722 2.016-1.417.25-.695.25-1.29.175-1.417-.074-.125-.274-.2-.574-.35z"/>
+  </svg>
+</a>
 
 <script src="js/app.js" defer></script>
 </body>

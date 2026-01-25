@@ -5,7 +5,9 @@ function setTheme(theme){
   document.body.classList.remove('light-mode','dark-mode');
   document.body.classList.add(theme);
   const icon = document.getElementById('themeIcon');
-  if(icon) icon.textContent = theme === 'dark-mode' ? '🌙' : '☀️';
+  if(icon) {
+    icon.className = theme === 'dark-mode' ? 'fas fa-moon' : 'fas fa-sun';
+  }
   const btn = document.getElementById('themeToggle');
   if(btn) btn.setAttribute('aria-pressed', theme === 'dark-mode');
   localStorage.setItem('theme', theme);
@@ -41,11 +43,24 @@ function closeMenu(){
 }
 
 /* CONTACT FORM */
+// Initialize EmailJS (if available)
+function initEmailJS(){
+  if(typeof emailjs !== 'undefined'){
+    // EmailJS is loaded - you can initialize with your public key here if needed
+    // emailjs.init("YOUR_PUBLIC_KEY"); // Uncomment and add your EmailJS public key
+  }
+}
+
 async function handleSubmit(e){
   e.preventDefault();
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
-  if(status){ status.hidden = false; status.textContent = 'Sending…'; status.style.color = ''; }
+  if(status){ 
+    status.hidden = false; 
+    status.textContent = 'Sending…'; 
+    status.style.color = ''; 
+    status.style.background = 'rgba(255,255,255,0.1)';
+  }
 
   const data = {
     name: (form.name && form.name.value || document.getElementById('name').value || '').trim(),
@@ -56,11 +71,43 @@ async function handleSubmit(e){
   };
 
   if(!data.name || !data.email || !data.phone || !data.message){
-    if(status){ status.textContent = 'Please fill all required fields.'; status.style.color = 'crimson'; }
+    if(status){ 
+      status.textContent = 'Please fill all required fields.'; 
+      status.style.color = 'crimson'; 
+      status.style.background = 'rgba(220,20,60,0.1)';
+    }
     return;
   }
 
-  // Try to POST to /api/contact — replace with your backend. Fallback opens mail client.
+  // Try EmailJS first (if configured)
+  if(typeof emailjs !== 'undefined' && window.EMAILJS_SERVICE_ID && window.EMAILJS_TEMPLATE_ID){
+    try{
+      await emailjs.send(
+        window.EMAILJS_SERVICE_ID,
+        window.EMAILJS_TEMPLATE_ID,
+        {
+          from_name: data.name,
+          from_email: data.email,
+          phone: data.phone,
+          company: data.company || 'Not provided',
+          message: data.message,
+          to_email: 'ceo.kmsa@gmail.com'
+        }
+      );
+      if(status){ 
+        status.textContent = 'Message sent successfully! We will contact you shortly.'; 
+        status.style.color = 'limegreen'; 
+        status.style.background = 'rgba(50,205,50,0.1)';
+      }
+      form.reset();
+      return;
+    } catch(err){
+      console.error('EmailJS error:', err);
+      // Fall through to mailto
+    }
+  }
+
+  // Try backend API
   try{
     const res = await fetch('/api/contact', {
       method:'POST',
@@ -69,16 +116,34 @@ async function handleSubmit(e){
     });
 
     if(res.ok){
-      if(status){ status.textContent = 'Request sent. We will contact you shortly.'; status.style.color = 'limegreen'; }
+      if(status){ 
+        status.textContent = 'Message sent successfully! We will contact you shortly.'; 
+        status.style.color = 'limegreen'; 
+        status.style.background = 'rgba(50,205,50,0.1)';
+      }
       form.reset();
+      return;
     } else throw new Error('Server error '+res.status);
   } catch(err){
-    // fallback: mailto
-    const subject = encodeURIComponent('KM Security Consultation — ' + data.name);
-    const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nCompany: ${data.company}\n\n${data.message}`);
-    window.location.href = `mailto:contact@example.com?subject=${subject}&body=${body}`;
-    if(status){ status.textContent = 'Unable to send via site — opening your mail client as fallback.'; status.style.color = 'orange'; }
-    form.reset();
+    // Final fallback: mailto to ceo.kmsa@gmail.com
+    const subject = encodeURIComponent('KM Security Inquiry — ' + data.name);
+    const body = encodeURIComponent(
+      `Name: ${data.name}\n` +
+      `Email: ${data.email}\n` +
+      `Phone: ${data.phone}\n` +
+      `Company: ${data.company || 'Not provided'}\n\n` +
+      `Message:\n${data.message}`
+    );
+    window.location.href = `mailto:ceo.kmsa@gmail.com?subject=${subject}&body=${body}`;
+    if(status){ 
+      status.textContent = 'Opening your email client. Please send the message to ceo.kmsa@gmail.com'; 
+      status.style.color = 'orange'; 
+      status.style.background = 'rgba(255,165,0,0.1)';
+    }
+    // Don't reset form in case user wants to review before sending
+    setTimeout(() => {
+      form.reset();
+    }, 3000);
   }
 }
 
@@ -112,5 +177,6 @@ function initUI(){
 window.addEventListener('DOMContentLoaded', ()=> {
   initTheme();
   initUI();
+  initEmailJS();
   document.getElementById("navContent").classList.add("ready");
 });
