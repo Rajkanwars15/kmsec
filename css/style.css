@@ -601,12 +601,8 @@ body.light-mode .credentials li {
   max-width:var(--max-width);
   margin:0 auto;
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+  grid-template-columns:repeat(4,1fr);
   gap:1rem;
-}
-
-.compliance-address {
-  grid-column:span 1;
 }
 
 .compliance-card {
@@ -813,9 +809,9 @@ textarea { min-height:140px; resize:vertical; }
   box-shadow:0 6px 20px rgba(37,211,102,0.6);
 }
 
-.whatsapp-float svg {
-  width:32px;
-  height:32px;
+.whatsapp-float i {
+  font-size:32px;
+  color:#fff;
 }
 
 /* =========================================
@@ -960,10 +956,6 @@ body.light-mode .footer-contact a {
     grid-template-columns:repeat(2,1fr);
   }
   
-  .compliance-address {
-    grid-column:span 2;
-  }
-  
   .industries-grid {
     grid-template-columns:repeat(2,1fr);
   }
@@ -985,7 +977,6 @@ body.light-mode .footer-contact a {
   .stats-grid { grid-template-columns:1fr; }
   .hero-logo { max-width:260px; }
   .compliance-grid { grid-template-columns:1fr; }
-  .compliance-address { grid-column:span 1; }
   .contact-info-grid { grid-template-columns:1fr; }
   .industries-grid { grid-template-columns:1fr; }
 }
